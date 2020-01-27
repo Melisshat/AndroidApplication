@@ -1,5 +1,6 @@
 package fr.isen.vallauri.mysecondapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,8 +15,19 @@ class HomeActivity : AppCompatActivity() {
         cycleVieIMG.setOnClickListener{
             goToLifeCycle()
         }
+        logoutBtn.setOnClickListener{
+            doLogout()
+        }
     }
-    private fun goToLifeCycle() {
+    private fun goToLifeCycle(){
         startActivity(Intent(this@HomeActivity, LifeCycleActivity::class.java))
+    }
+
+    private fun doLogout(){
+        val sharedPreference =  getSharedPreferences(LoginActivity.PREF_KEY, Context.MODE_PRIVATE)
+        var editor = sharedPreference.edit()
+        editor.clear()
+        editor.apply()
+        startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
     }
 }

@@ -37,8 +37,9 @@
         android:layout_marginTop="50dp"
         android:background="@color/colorRed"
         android:duplicateParentState="false"
-        android:paddingRight="20dp"
         android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sauvegardeIMG"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bonjourTV"
         app:srcCompat="@android:drawable/stat_notify_chat" />
@@ -80,8 +81,9 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="70dp"
         android:background="@color/colorRed"
-        android:paddingRight="20dp"
         android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/permissionIMG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sauvegardeIMG"
         app:srcCompat="@android:drawable/stat_sys_download_done" />
@@ -129,4 +131,19 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/webServiceIMG" />
+
+    <ImageView
+        android:id="@+id/logoutBtn"
+        android:layout_width="61dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,30 +1,33 @@
 package fr.isen.vallauri.mysecondapp
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toast.makeText
 import kotlinx.android.synthetic.main.activity_life_cycle.*
+import kotlinx.android.synthetic.main.fragment_life_cycle.*
 
-class LifeCycleActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_life_cycle)
-
-        supportFragmentManager.beginTransaction().add(R.id.frameLayoutFragment, LifeCycleFragment()).commit()
-
-        notification("onCreate", isActive = true)
-    }
+/**
+ * A simple [Fragment] subclass.
+ */
+class LifeCycleFragment : Fragment() {
 
     private fun notification(message : String, isActive : Boolean){
         if(isActive)
-           lifeCycleText.text = message
+            textViewFragment.text = message
         else
             Log.d("TAG", message)
-        makeText( this, "$message", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_life_cycle, container, false)
     }
 
     override fun onStart(){
