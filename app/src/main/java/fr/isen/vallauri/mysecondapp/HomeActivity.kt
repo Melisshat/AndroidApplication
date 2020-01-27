@@ -15,12 +15,18 @@ class HomeActivity : AppCompatActivity() {
         cycleVieIMG.setOnClickListener{
             goToLifeCycle()
         }
+        sauvegardeIMG.setOnClickListener{
+            goToStorage()
+        }
         logoutBtn.setOnClickListener{
             doLogout()
         }
     }
     private fun goToLifeCycle(){
         startActivity(Intent(this@HomeActivity, LifeCycleActivity::class.java))
+    }
+    private fun goToStorage(){
+        startActivity(Intent(this@HomeActivity, StorageActivity::class.java))
     }
 
     private fun doLogout(){
