@@ -4,16 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_login.*
-import android.R.id.edit
 import android.content.Context
-import android.content.SharedPreferences
-import android.content.SharedPreferences.Editor
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -53,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveUserCredential(myId: String, myPassword: String){
         val sharedPreference =  getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
-        var editor = sharedPreference.edit()
+        val editor = sharedPreference.edit()
         editor.putString(MY_ID_KEY, myId)
         editor.putString(MY_MDP_KEY, myPassword)
         editor.apply()

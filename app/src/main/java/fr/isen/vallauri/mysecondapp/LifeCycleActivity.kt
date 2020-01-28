@@ -1,6 +1,5 @@
 package fr.isen.vallauri.mysecondapp
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,7 +23,7 @@ class LifeCycleActivity : AppCompatActivity() {
            lifeCycleText.text = message
         else
             Log.d("TAG", message)
-        makeText( this, "$message", Toast.LENGTH_SHORT).show()
+        makeText( this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onStart(){

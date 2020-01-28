@@ -10,18 +10,15 @@ import java.io.File
 import java.util.*
 
 class StorageActivity : AppCompatActivity() {
-    lateinit var mySave: Button // Save button
-    lateinit var myShow: Button  // Read button
-    lateinit var myLastName: EditText
-    lateinit var myFirstName: EditText
-    lateinit var myDate: TextView // Date de naissance
-    lateinit var myDateTitle: TextView // Titre
+    private lateinit var mySave: Button // Save button
+    private lateinit var myShow: Button  // Read button
+    private lateinit var myLastName: EditText
+    private lateinit var myFirstName: EditText
+    private lateinit var myDate: TextView // Date of birth
+    private var myAge: Int = 0
 
     companion object {
         private const val JSON_FILE = "data_user_toolbox.json"
-        /*private const val LAST_NAME_KEY = "LastName"
-        private const val FIRST_NAME_KEY = "fisrtname"
-        private const val DATE_KEY = "date"*/
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +29,14 @@ class StorageActivity : AppCompatActivity() {
         myLastName = findViewById(R.id.lastName)
         myFirstName = findViewById(R.id.firstName)
         myDate = findViewById(R.id.date) // format --> ../../..
-        myDateTitle = findViewById(R.id.dateTitle) // date
 
         val cal: Calendar = Calendar.getInstance()
         // If pb replace the "_" by "view"
-        val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
-            var mois:Int = month+1
-            val newDate = "$year/$mois/$dayOfMonth"
+        val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, day ->
+            val mth:Int = month+1
+            val newDate = "$year/$mth/$day"
             myDate.text=newDate
+            getAge(year, month, day)
         }
 
         mySave.setOnClickListener {
@@ -57,6 +54,7 @@ class StorageActivity : AppCompatActivity() {
         myDate.setOnClickListener {
             showDatePicker(cal, dateSetListener)
         }
+
     }
 
     // Show the calendar
@@ -70,10 +68,10 @@ class StorageActivity : AppCompatActivity() {
         ).show()
     }
 
-    // Saving function in the JSON file
+    // Saving in the JSON file
     private fun saveDataToFile(lastName: String, firstname: String, date: String) {
         if (firstname.isNotEmpty() && lastName.isNotEmpty()) {
-            val data = "{'lastName':'$lastName','firstName':'$firstname','date':'$date'}"
+            val data = "{'lastName':'$lastName','firstName':'$firstname','date':'$date', 'age':'$myAge'}"
             //val dataJson: JSONObject = JSONObject().put("lastName", lastName)
             File(cacheDir.absolutePath + JSON_FILE).writeText(data)
             Toast.makeText(
@@ -92,14 +90,26 @@ class StorageActivity : AppCompatActivity() {
             val strDate: String = jsonObject.optString("date")
             val strLastName: String = jsonObject.optString("lastName")
             val strFirstName: String = jsonObject.optString("firstName")
+            val strAge: String = jsonObject.optString("age")
 
             // Diplay a dialog window
             AlertDialog.Builder(this@StorageActivity).setTitle("Lecture du fichier")
-                .setMessage("Nom:$strLastName\n Prenom:$strFirstName\n Date:$strDate\nAge:0")
+                .setMessage("Nom: $strLastName\nPrenom: $strFirstName\nDate: $strDate\nAge: $strAge")
                 .create().show()
 
         } else
             Toast.makeText(this@StorageActivity, "Aucune information fournie", Toast.LENGTH_LONG).show()
+    }
 
+    private fun getAge(year: Int, month: Int, day: Int){
+        val today: Calendar = Calendar.getInstance()
+
+        val birth = Calendar.getInstance()
+        birth.set(year, month, day)
+
+        myAge = today.get(Calendar.YEAR) - birth.get(Calendar.YEAR)
+
+        if(today.get(Calendar.DAY_OF_YEAR) < birth.get(Calendar.DAY_OF_YEAR))
+            myAge--
     }
 }

@@ -18,20 +18,28 @@ class HomeActivity : AppCompatActivity() {
         sauvegardeIMG.setOnClickListener{
             goToStorage()
         }
+        permissionIMG.setOnClickListener{
+            goToPermission()
+        }
         logoutBtn.setOnClickListener{
             doLogout()
         }
     }
+
     private fun goToLifeCycle(){
         startActivity(Intent(this@HomeActivity, LifeCycleActivity::class.java))
     }
     private fun goToStorage(){
         startActivity(Intent(this@HomeActivity, StorageActivity::class.java))
     }
+    private fun goToPermission(){
+        startActivity(Intent(this@HomeActivity, InformationActivity::class.java))
+    }
+
 
     private fun doLogout(){
         val sharedPreference =  getSharedPreferences(LoginActivity.PREF_KEY, Context.MODE_PRIVATE)
-        var editor = sharedPreference.edit()
+        val editor = sharedPreference.edit()
         editor.clear()
         editor.apply()
         startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
