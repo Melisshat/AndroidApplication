@@ -4,4 +4,32 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mon_fragment">Mon fragment</string>
+    <string name="permission_location">Latitude %1$f\nLongitude %2$f</string>
+    <string name="titre_permission">Accès aux informations Android</string>
+    <string name="titre_informations">Informations</string>
+    <string name="bouton_lecture">Lecture</string>
+    <string name="bouton_sauvegarde">Sauvegarde</string>
+    <string name="format_date">../../..</string>
+    <string name="date">Date :</string>
+    <string name="entrer_nom">Nom</string>
+    <string name="entrer_prenom">Prenom</string>
+    <string name="titre_login">Bonjour</string>
+    <string name="cycle_de_vie">Cycle de vie</string>
+    <string name="sauvegarde">Sauvegarde</string>
+    <string name="permissions">Permissions</string>
+    <string name="webservices">WebServices</string>
+    <string name="cycle_de_vie_statut">Mon text</string>
+    <string name="cycle_de_vie_titre">Cycle de vie</string>
+    <string name="connexion_login">Connexion</string>
+    <string name="identifiant_input">Identifiant</string>
+    <string name="mot_de_passe_input">Mot de passe</string>
+    <string name="valider_bouton">Valider</string>
+    <string name="mon_fragment_cycle_vie">Mon Fragment</string>
+    <string name="image_isen">Image isen</string>
+    <string name="cycle_de_vie_image">Cycle de vie Image</string>
+    <string name="sauvegarde_image">Sauvegarde Image</string>
+    <string name="permission_image">Permission Image</string>
+    <string name="webservice_image">WebService Image</string>
+    <string name="unlog_image">Unlog Image</string>
+    <string name="camera_image">camera Image</string>
 </resources>

@@ -11,7 +11,7 @@
         android:layout_width="163dp"
         android:layout_height="43dp"
         android:layout_marginTop="84dp"
-        android:text="Cycle de vie"
+        android:text="@string/cycle_de_vie_titre"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
         android:layout_width="87dp"
         android:layout_height="23dp"
         android:layout_marginTop="300dp"
-        android:text="Mon text"
+        android:text="@string/cycle_de_vie_statut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lifeCycleTV" />

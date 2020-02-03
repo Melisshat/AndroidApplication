@@ -15,14 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/isen" />
+        app:srcCompat="@drawable/isen"
+        android:contentDescription="@string/image_isen" />
 
     <TextView
         android:id="@+id/bonjourTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
-        android:text="Bonjour"
+        android:text="@string/titre_login"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -42,7 +43,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/sauvegardeIMG"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bonjourTV"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+        app:srcCompat="@android:drawable/stat_notify_chat"
+        android:contentDescription="@string/cycle_de_vie_image" />
 
     <ImageView
         android:id="@+id/sauvegardeIMG"
@@ -57,7 +59,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cycleVieIMG"
         app:layout_constraintTop_toBottomOf="@+id/bonjourTV"
-        app:srcCompat="@android:drawable/stat_notify_sdcard" />
+        app:srcCompat="@android:drawable/stat_notify_sdcard"
+        android:contentDescription="@string/sauvegarde_image" />
 
     <ImageView
         android:id="@+id/permissionIMG"
@@ -72,7 +75,8 @@
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cycleVieIMG"
-        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
+        app:srcCompat="@android:drawable/stat_sys_speakerphone"
+        android:contentDescription="@string/permission_image" />
 
     <ImageView
         android:id="@+id/webServiceIMG"
@@ -86,7 +90,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/permissionIMG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sauvegardeIMG"
-        app:srcCompat="@android:drawable/stat_sys_download_done" />
+        app:srcCompat="@android:drawable/stat_sys_download_done"
+        android:contentDescription="@string/webservice_image" />
 
     <TextView
         android:id="@+id/cycleVieTV"
@@ -94,7 +99,7 @@
         android:layout_height="26dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:text="Cycle de vie"
+        android:text="@string/cycle_de_vie"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cycleVieIMG" />
@@ -105,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="70dp"
-        android:text="Sauvegarde"
+        android:text="@string/sauvegarde"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sauvegardeIMG" />
@@ -116,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:text="Permissions"
+        android:text="@string/permissions"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/permissionIMG" />
@@ -127,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="70dp"
-        android:text="WebServices"
+        android:text="@string/webservices"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/webServiceIMG" />
@@ -144,6 +149,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.065"
-        app:srcCompat="@android:drawable/ic_lock_power_off" />
+        app:srcCompat="@android:drawable/ic_lock_power_off"
+        android:contentDescription="@string/unlog_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
