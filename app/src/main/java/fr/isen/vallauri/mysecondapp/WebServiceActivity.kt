@@ -3,6 +3,8 @@ package fr.isen.vallauri.mysecondapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -29,7 +31,10 @@ class WebServiceActivity : AppCompatActivity() {
             Response.Listener { response ->
                 val gson = Gson()
                 user = gson.fromJson(response.toString(), User::class.java)
-                /* IL MANQUE DES TRUCS */
+                progressBar2.visibility = View.INVISIBLE
+                myUserRV.layoutManager = LinearLayoutManager(this)
+                myUserRV.adapter = RecyclerViewWeb(user,this)
+                myUserRV.visibility = View.VISIBLE
 
             },
             Response.ErrorListener {
