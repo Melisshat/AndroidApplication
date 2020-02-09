@@ -5,8 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--uses-feature android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.permission.READ_EXTERNAL_STORAGE" /-->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".WebServiceActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".LifeCycleActivity" />
         <activity android:name=".StorageActivity" />
@@ -28,5 +28,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

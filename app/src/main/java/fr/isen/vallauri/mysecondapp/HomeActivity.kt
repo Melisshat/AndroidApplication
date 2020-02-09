@@ -21,6 +21,9 @@ class HomeActivity : AppCompatActivity() {
         permissionIMG.setOnClickListener{
             goToPermission()
         }
+        webServiceIMG.setOnClickListener{
+            goToWebService()
+        }
         logoutBtn.setOnClickListener{
             doLogout()
         }
@@ -34,6 +37,9 @@ class HomeActivity : AppCompatActivity() {
     }
     private fun goToPermission(){
         startActivity(Intent(this@HomeActivity, InformationActivity::class.java))
+    }
+    private fun goToWebService(){
+        startActivity(Intent(this@HomeActivity, WebServiceActivity::class.java))
     }
 
 

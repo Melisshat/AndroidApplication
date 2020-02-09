@@ -39,7 +39,6 @@ class InformationActivity : AppCompatActivity(), LocationListener {
         startActivity(intent)
         Toast.makeText(this, "Gps désactivé", Toast.LENGTH_SHORT).show()
     }
-
     // initialisation not null
     private var locationManager: LocationManager? = null
 
