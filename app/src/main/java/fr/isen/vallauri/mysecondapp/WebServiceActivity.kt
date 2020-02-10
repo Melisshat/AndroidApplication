@@ -41,26 +41,6 @@ class WebServiceActivity : AppCompatActivity() {
                 Log.d("TAG", "Error")
             }
         )
-
-        /*
-        val url =
-            "https://randomuser.me/api/?inc=name%2Cpicture%2Clocation%2Cemail&noinfo=&nat=fr&format=pretty&results=10"
-
-        // Request a string response from the provided URL.
-
-        val stringRequest = JsonObjectRequest(Request.Method.GET, url, null,
-            Response.Listener { response ->
-
-                val gson = Gson()
-                user = gson.fromJson(response.toString(), User::class.java)
-
-                // Display the first 500 characters of the response string.
-                myUserRV.text = "Response is: $response"
-            },
-            Response.ErrorListener {
-                myUserRV.text = "Error! ${it.message}"
-            })
-*/
         // Add the request to the RequestQueue.
         queue.add(stringRequest)
         return user
