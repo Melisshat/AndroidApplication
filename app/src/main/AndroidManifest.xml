@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="fr.isen.vallauri.mysecondapp">
+    package="fr.isen.vallauri.toolboxVallauri">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,12 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".WebServiceActivity" />
-        <activity android:name=".InformationActivity" />
-        <activity android:name=".LifeCycleActivity" />
-        <activity android:name=".StorageActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.WebServiceActivity" />
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.InformationActivity" />
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.LifeCycleActivity" />
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.StorageActivity" />
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.HomeActivity" />
+        <activity android:name="fr.isen.vallauri.toolboxVallauri.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

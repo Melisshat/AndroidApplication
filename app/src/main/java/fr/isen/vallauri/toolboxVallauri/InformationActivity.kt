@@ -1,6 +1,7 @@
-package fr.isen.vallauri.mysecondapp
+package fr.isen.vallauri.toolboxVallauri
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager

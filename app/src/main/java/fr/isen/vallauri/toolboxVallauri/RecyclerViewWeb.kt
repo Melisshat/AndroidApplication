@@ -1,4 +1,4 @@
-package fr.isen.vallauri.mysecondapp
+package fr.isen.vallauri.toolboxVallauri
 
 import android.content.Context
 import android.view.LayoutInflater

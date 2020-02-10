@@ -1,4 +1,4 @@
-package fr.isen.vallauri.mysecondapp
+package fr.isen.vallauri.toolboxVallauri
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
